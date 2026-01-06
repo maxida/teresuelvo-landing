@@ -53,25 +53,58 @@ function FloatingScene() {
         />
       </Points>
 
+      {/* Martillo */}
       <Float speed={2} rotationIntensity={1} floatIntensity={1.5}>
-        <mesh position={[1.6, 0.2, 0.6]} castShadow>
-          <torusGeometry args={[0.6, 0.18, 64, 128]} />
-          <meshPhysicalMaterial color="#FBBF24" metalness={0.9} roughness={0.15} clearcoat={0.6} clearcoatRoughness={0.05} emissive="#f59e0b" emissiveIntensity={0.2} />
-        </mesh>
+        <group position={[1.6, 0.2, 0.6]} rotation={[0.2, 0.4, -0.2]} castShadow>
+          <mesh castShadow receiveShadow>
+            <cylinderGeometry args={[0.12, 0.12, 1.6, 48]} />
+            <meshPhysicalMaterial color="#0ea5e9" metalness={0.25} roughness={0.35} clearcoat={0.4} clearcoatRoughness={0.2} />
+          </mesh>
+          <mesh position={[0, 0.55, 0]} castShadow>
+            <boxGeometry args={[0.8, 0.25, 0.25]} />
+            <meshPhysicalMaterial color="#fbbf24" metalness={0.85} roughness={0.22} clearcoat={0.55} clearcoatRoughness={0.08} emissive="#f59e0b" emissiveIntensity={0.12} />
+          </mesh>
+          <mesh position={[0.35, 0.55, 0]} castShadow>
+            <boxGeometry args={[0.2, 0.25, 0.5]} />
+            <meshPhysicalMaterial color="#f59e0b" metalness={0.9} roughness={0.18} clearcoat={0.55} clearcoatRoughness={0.08} />
+          </mesh>
+        </group>
       </Float>
 
+      {/* Destornillador */}
       <Float speed={1.5} rotationIntensity={0.8} floatIntensity={1}>
-        <mesh position={[-1.3, -0.1, -0.4]} castShadow>
-          <sphereGeometry args={[0.7, 64, 64]} />
-          <meshPhysicalMaterial color="#7C3AED" metalness={0.6} roughness={0.12} clearcoat={0.4} clearcoatRoughness={0.05} emissive="#7C3AED" emissiveIntensity={0.06} />
-        </mesh>
+        <group position={[-1.3, -0.1, -0.4]} rotation={[0.5, -0.3, 0.2]} castShadow>
+          <mesh castShadow receiveShadow>
+            <cylinderGeometry args={[0.12, 0.12, 1.2, 48]} />
+            <meshPhysicalMaterial color="#7c3aed" metalness={0.35} roughness={0.32} clearcoat={0.5} clearcoatRoughness={0.15} emissive="#7c3aed" emissiveIntensity={0.05} />
+          </mesh>
+          <mesh position={[0, -0.45, 0]} castShadow>
+            <cylinderGeometry args={[0.05, 0.05, 0.5, 32]} />
+            <meshPhysicalMaterial color="#cbd5e1" metalness={0.85} roughness={0.18} clearcoat={0.4} clearcoatRoughness={0.1} />
+          </mesh>
+          <mesh position={[0, -0.75, 0]} castShadow>
+            <coneGeometry args={[0.08, 0.25, 32]} />
+            <meshPhysicalMaterial color="#e2e8f0" metalness={0.9} roughness={0.14} clearcoat={0.35} clearcoatRoughness={0.08} />
+          </mesh>
+        </group>
       </Float>
 
+      {/* Pincel */}
       <Float speed={1.2} rotationIntensity={0.6} floatIntensity={0.8}>
-        <mesh position={[0.2, -0.8, -1.2]} castShadow>
-          <boxGeometry args={[0.9, 0.5, 0.5, 8, 8, 8]} />
-          <meshPhysicalMaterial color="#06B6D4" metalness={0.5} roughness={0.18} clearcoat={0.3} clearcoatRoughness={0.05} emissive="#06B6D4" emissiveIntensity={0.06} />
-        </mesh>
+        <group position={[0.2, -0.8, -1.2]} rotation={[0.4, 0.2, -0.3]} castShadow>
+          <mesh castShadow receiveShadow>
+            <cylinderGeometry args={[0.09, 0.09, 1.0, 40]} />
+            <meshPhysicalMaterial color="#0ea5e9" metalness={0.25} roughness={0.32} clearcoat={0.45} clearcoatRoughness={0.18} />
+          </mesh>
+          <mesh position={[0, -0.45, 0]} castShadow>
+            <cylinderGeometry args={[0.11, 0.11, 0.15, 32]} />
+            <meshPhysicalMaterial color="#94a3b8" metalness={0.8} roughness={0.22} clearcoat={0.4} clearcoatRoughness={0.1} />
+          </mesh>
+          <mesh position={[0, -0.6, 0]} castShadow>
+            <boxGeometry args={[0.18, 0.12, 0.3]} />
+            <meshPhysicalMaterial color="#f472b6" metalness={0.35} roughness={0.38} clearcoat={0.35} clearcoatRoughness={0.2} />
+          </mesh>
+        </group>
       </Float>
     </group>
   );
